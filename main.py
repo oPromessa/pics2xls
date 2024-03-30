@@ -20,9 +20,9 @@ def insert_picture_to_excel(row, worksheet):
     img = ExcelImage(img_path)
     img.width = 100  # Set the desired image width in the cell
     img.height = 100  # Set the desired image height in the cell
-    worksheet.column_dimensions['F'].width = 25  # Adjust the width of the 'remarks' column
+    worksheet.column_dimensions['I'].width = 25  # Adjust the width of the 'remarks' column
     worksheet.row_dimensions[row.name + 2].height = 100  # Adjust the row height to fit the image
-    worksheet.add_image(img, f'F{row.name + 2}')  # Adjust the cell where the image will be inserted
+    worksheet.add_image(img, f'I{row.name + 2}')  # Adjust the cell where the image will be inserted
 
 def csv_to_excel_with_images(csv_file_path, excel_file_path):
     df = pd.read_csv(csv_file_path)
